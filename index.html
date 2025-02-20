@@ -98,7 +98,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: red;
+            background: black;
             color: white;
             font-weight: bold;
             font-size: 12px;
@@ -123,13 +123,13 @@
 
     .message-box {
         position: absolute;
-        top: 4px;
+        top: 30px;
         left: 2px;
         
         /* background: linear-gradient(135deg, #ff5722, #ff9800); */
         background: #FFC501;
         
-        color: white;
+        color: rgb(81, 78, 78);
         border:2px solid white;
         padding: 10px;
         border-radius: 50%;
@@ -160,6 +160,10 @@
         color: rgb(9, 9, 102);
     }
 
+    .text {
+        color: rgb(9, 9, 102);
+    }
+
 
     @keyframes slideIn {
         0% { left: -300px; }
@@ -175,14 +179,19 @@
 </head>
 <body>
 
-    <div class="ad-container">  
+    <div class="ad-container"
+
+              data-url="https://ebl.com.bd/emical"
+              onclick="goToLink(this)"
+              style="cursor: pointer">  
 
 
         <div class="message-box">
-            <p>আপনার স্বপ্নের গাড়ি</p>
+            <p>আপনার স্বপ্নের</p>
+            <p class="sixty text_blue">গাড়ি</p>
             <p>কেনার ইচ্ছা পূরণে  </p>
             <p><span class="text_blue"> ইবিএল</span></p>
-            <p><span class="sixty"> অটো লোন</span></p>
+            <p><span class="sixty text_blue">অটো লোন</span></p>
             <!-- <p>এখন সর্বোচ্চ <br> <span class="sixty">৬০</span> লক্ষ টাকা</p> -->
         </div>
         
@@ -228,6 +237,18 @@
     </div>
 
     <script>
+
+
+        
+      function goToLink(element) {
+        var url = element.getAttribute("data-url"); // Get the correct URL from `data-url`
+        if (url) {
+          window.open(url, "_blank"); // Open the correct link in a new tab
+        }
+      }
+
+
+
         function updateCountdown() {
             let now = new Date();
             let iftarTime = new Date();

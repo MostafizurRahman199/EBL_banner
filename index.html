@@ -98,7 +98,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: black;
+            background: #053756;
             color: white;
             font-weight: bold;
             font-size: 12px;
@@ -130,7 +130,8 @@
         /* background: linear-gradient(135deg, #ff5722, #ff9800); */
         background: #FFC501;
         
-        color: rgb(81, 78, 78);
+        /* color: rgb(81, 78, 78); */
+        color: #053756;
         border:2px solid white;
         padding: 10px;
         border-radius: 50%;
@@ -209,7 +210,7 @@
 
 
         <div class="countdown">
-            <div class="iftar_title">ইফতারের সময় বাকি:</div>
+            <div class="iftar_title" id="countdown-title">ইফতারের সময় বাকি:</div>
             <div class="countdown-item">
                 <span id="hours">০০</span>
                 <span class="countdown-label">ঘণ্টা</span>
@@ -250,26 +251,109 @@
             }
 
 
+const ramadanTimes = [
+        { date: "24 February 2025", sehri: "04:30 (+06)", iftar: "18:30 (+06)" },
+        { date: "25 February 2025", sehri: "04:30 (+06)", iftar: "18:30 (+06)" },
+        { date: "26 February 2025", sehri: "04:30 (+06)", iftar: "18:30 (+06)" },
+        { date: "27 February 2025", sehri: "04:30 (+06)", iftar: "18:30 (+06)" },
+        { date: "28 February 2025", sehri: "04:30 (+06)", iftar: "18:30 (+06)" },
+    { date: "01 March 2025", sehri: "05:05 (+06)", iftar: "18:01 (+06)" },
+    { date: "02 March 2025", sehri: "05:04 (+06)", iftar: "18:02 (+06)" },
+    { date: "03 March 2025", sehri: "05:04 (+06)", iftar: "18:02 (+06)" },
+    { date: "04 March 2025", sehri: "05:03 (+06)", iftar: "18:03 (+06)" },
+    { date: "05 March 2025", sehri: "05:02 (+06)", iftar: "18:03 (+06)" },
+    { date: "06 March 2025", sehri: "05:01 (+06)", iftar: "18:04 (+06)" },
+    { date: "07 March 2025", sehri: "05:00 (+06)", iftar: "18:04 (+06)" },
+    { date: "08 March 2025", sehri: "04:59 (+06)", iftar: "18:04 (+06)" },
+    { date: "09 March 2025", sehri: "04:58 (+06)", iftar: "18:05 (+06)" },
+    { date: "10 March 2025", sehri: "04:57 (+06)", iftar: "18:05 (+06)" },
+    { date: "11 March 2025", sehri: "04:56 (+06)", iftar: "18:06 (+06)" },
+    { date: "12 March 2025", sehri: "04:55 (+06)", iftar: "18:06 (+06)" },
+    { date: "13 March 2025", sehri: "04:54 (+06)", iftar: "18:07 (+06)" },
+    { date: "14 March 2025", sehri: "04:53 (+06)", iftar: "18:07 (+06)" },
+    { date: "15 March 2025", sehri: "04:52 (+06)", iftar: "18:07 (+06)" },
+    { date: "16 March 2025", sehri: "04:51 (+06)", iftar: "18:08 (+06)" },
+    { date: "17 March 2025", sehri: "04:50 (+06)", iftar: "18:08 (+06)" },
+    { date: "18 March 2025", sehri: "04:49 (+06)", iftar: "18:09 (+06)" },
+    { date: "19 March 2025", sehri: "04:48 (+06)", iftar: "18:09 (+06)" },
+    { date: "20 March 2025", sehri: "04:47 (+06)", iftar: "18:09 (+06)" },
+    { date: "21 March 2025", sehri: "04:46 (+06)", iftar: "18:10 (+06)" },
+    { date: "22 March 2025", sehri: "04:45 (+06)", iftar: "18:10 (+06)" },
+    { date: "23 March 2025", sehri: "04:44 (+06)", iftar: "18:11 (+06)" },
+    { date: "24 March 2025", sehri: "04:43 (+06)", iftar: "18:11 (+06)" },
+    { date: "25 March 2025", sehri: "04:42 (+06)", iftar: "18:11 (+06)" },
+    { date: "26 March 2025", sehri: "04:41 (+06)", iftar: "18:12 (+06)" },
+    { date: "27 March 2025", sehri: "04:40 (+06)", iftar: "18:12 (+06)" },
+    { date: "28 March 2025", sehri: "04:39 (+06)", iftar: "18:13 (+06)" },
+    { date: "29 March 2025", sehri: "04:38 (+06)", iftar: "18:13 (+06)" }
+];
 
-        function updateCountdown() {
-            let now = new Date();
-            let iftarTime = new Date();
-            iftarTime.setHours(18, 30, 0); // Example 6:30 PM
+    function updateCountdown() {
+        let now = new Date();
+        let todayDate = now.toLocaleDateString("en-GB", { day: '2-digit', month: 'long', year: 'numeric' });
+
+     
+        let sehriTime, iftarTime;
+
+       
+
+        // Check if today exists in Ramadan schedule
+        let todaySchedule = ramadanTimes.find(item => item.date === todayDate);
+   
+
+        if (todaySchedule) {
+            let sehriParts = todaySchedule.sehri.split(" ")[0].split(":");
+   
+            let iftarParts = todaySchedule.iftar.split(" ")[0].split(":");
+      
+
+            sehriTime = new Date();
+            sehriTime.setHours(parseInt(sehriParts[0]), parseInt(sehriParts[1]), 0);
+
+            iftarTime = new Date();
+            iftarTime.setHours(parseInt(iftarParts[0]), parseInt(iftarParts[1]), 0);
+        } 
+
+        let targetTime, titleText;
+
+        if (now < sehriTime) {
+            targetTime = sehriTime;
+            titleText = "সেহেরীর সময় বাকি:";
+        } else if (now < iftarTime) {
+            targetTime = iftarTime;
+            titleText = "ইফতারের সময় বাকি:";
+        } else {
+            // After Iftar, set next day's Sehri countdown dynamically
+            let todayIndex = ramadanTimes.findIndex(item => item.date === todayDate);
             
-            let iftarDiff = iftarTime - now;
-            if (iftarDiff < 0) iftarDiff += 24 * 60 * 60 * 1000;
+            if (todayIndex !== -1 && todayIndex + 1 < ramadanTimes.length) {
+                let nextDaySehriParts = ramadanTimes[todayIndex + 1].sehri.split(" ")[0].split(":");
+                targetTime = new Date();
+                targetTime.setDate(now.getDate() + 1);
+                targetTime.setHours(parseInt(nextDaySehriParts[0]), parseInt(nextDaySehriParts[1]), 0);
+            } else {
+                // Default fallback Sehri time if next day's data is missing
+                targetTime = new Date();
+                targetTime.setDate(now.getDate() + 1);
+                targetTime.setHours(4, 30, 0);
+            }
 
-            let hours = Math.floor(iftarDiff / (1000 * 60 * 60));
-            let minutes = Math.floor((iftarDiff % (1000 * 60 * 60)) / (1000 * 60));
-            let seconds = Math.floor((iftarDiff % (1000 * 60)) / 1000);
-
-            document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
-            document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+            titleText = "সেহেরীর সময় বাকি:";
         }
 
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+        let timeDiff = targetTime - now;
+        let hours = Math.floor(timeDiff / (1000 * 60 * 60));
+        let minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown-title").textContent = titleText;
+        document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+        document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+        document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
     </script>
 </body>
 </html>

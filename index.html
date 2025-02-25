@@ -1,64 +1,63 @@
 <!DOCTYPE html>
 <html lang="bn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Estern Bank ৩২০x২৫০</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
 
-        .ad-container {
-            width: 320px;
-            height: 250px;
-            border: 1px solid #ccc;
-            position: relative;
-            background-color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            box-sizing: border-box;
-            background-image: url("images/bg13.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+      .ad-container {
+        width: 320px;
+        height: 250px;
+        border: 1px solid #ccc;
+        position: relative;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        box-sizing: border-box;
+        background-image: url("images/bg13.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
 
-
-        .iftar_title {
-            font-size: 16px;
-            margin-right: 10px;
-            font-weight: bold;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 5px;
-        }
-        .countdown {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            background: linear-gradient(135deg, #F8CC12, #ff9900);
-            padding: 5px;
-            border-radius: 6px;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-            font-family: Arial, sans-serif;
-            position: absolute;
-            bottom: 2px;
-            left: 8px;
-            font-size: 10px;
-        }
-
-        .logo_img {
+      .iftar_title {
+        font-size: 16px;
+        margin-right: 10px;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 5px;
+      }
+      .countdown {
         display: flex;
         align-items: center;
         gap: 5px;
-        background: linear-gradient(135deg, #F8CC12, #ff9900);
+        background: linear-gradient(135deg, #f8cc12, #ff9900);
+        padding: 5px;
+        border-radius: 6px;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        font-family: Arial, sans-serif;
+        position: absolute;
+        bottom: 2px;
+        left: 8px;
+        font-size: 10px;
+      }
+
+      .logo_img {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        background: linear-gradient(135deg, #f8cc12, #ff9900);
         padding: 5px;
         border: 2px solid white;
         border-radius: 4px;
@@ -68,71 +67,81 @@
         top: -50px;
         right: 10px;
         font-size: 10px;
-        animation: dropDown 1s ease-out forwards, beatLogo 1.5s infinite alternate ease-in-out 1s;
-    }
+        animation: dropDown 1s ease-out forwards,
+          beatLogo 1.5s infinite alternate ease-in-out 1s;
+      }
 
-    @keyframes dropDown {
-        0% { top: -50px; }
-        100% { top: 40px; }
-    }
-
-    @keyframes beatLogo {
-        0% { transform: scale(1); }
-        100% { transform: scale(1.1); }
-    }
-        
-
-        .car_img {
-            margin-top: 40px;
-            animation: scaleCar 1.5s infinite alternate ease-in-out;
+      @keyframes dropDown {
+        0% {
+          top: -50px;
         }
-
-        @keyframes scaleCar {
-            0% { transform: scale(1.3); }
-            100% { transform: scale(1.5); }
+        100% {
+          top: 40px;
         }
+      }
 
-
-        .countdown-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: #053756;
-            color: white;
-            font-weight: bold;
-            font-size: 12px;
-            padding: 3px 6px;
-            border-radius: 4px;
+      @keyframes beatLogo {
+        0% {
+          transform: scale(1);
         }
-
-        .countdown-label {
-            font-size: 8px;
-            margin-top: 2px;
+        100% {
+          transform: scale(1.1);
         }
+      }
 
-        /* Google AdSense positioning */
-    .adsense-container {
+      .car_img {
+        margin-top: 40px;
+        animation: scaleCar 1.5s infinite alternate ease-in-out;
+      }
+
+      @keyframes scaleCar {
+        0% {
+          transform: scale(1.3);
+        }
+        100% {
+          transform: scale(1.5);
+        }
+      }
+
+      .countdown-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #053756;
+        color: white;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 3px 6px;
+        border-radius: 4px;
+      }
+
+      .countdown-label {
+        font-size: 8px;
+        margin-top: 2px;
+      }
+
+      /* Google AdSense positioning */
+      .adsense-container {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         pointer-events: none; /* Allows clicks to pass through to .ad-container */
-    }
+      }
 
-
-    .message-box {
+      .message-box {
         position: absolute;
         top: 30px;
         left: 2px;
-        
+
         /* background: linear-gradient(135deg, #ff5722, #ff9800); */
-        background: #FFC501;
-        
+        background: #ffc501;
+
         /* color: rgb(81, 78, 78); */
         color: #053756;
-        border:2px solid white;
+        border: 2px solid white;
         padding: 10px;
         border-radius: 50%;
         font-family: "Arial", sans-serif;
@@ -141,204 +150,244 @@
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         max-width: 280px;
         height: 80px;
-        animation: slideIn 1s ease-out forwards , scaleMessage 1.5s  alternate ease-in-out 1s infinite;
+        animation: slideIn 1s ease-out forwards,
+          scaleMessage 1.5s alternate ease-in-out 1s infinite;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
-
-    }
-    .message-box p {
+      }
+      .message-box p {
         margin: 1px 0;
-    }
+      }
 
-  
+      @keyframes slideIn {
+        0% {
+          left: -300px;
+        }
+        100% {
+          left: 10px;
+        }
+      }
 
-    @keyframes slideIn {
-        0% { left: -300px; }
-        100% { left: 10px; }
-    }
+      @keyframes scaleMessage {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.1);
+        }
+      }
 
-    @keyframes scaleMessage {
-        0% { transform: scale(1); }
-        100% { transform: scale(1.1); }
-    }
-
-
-    .sixty {
+      .sixty {
         font-size: 12px;
         font-weight: bold;
-    }
+      }
 
-    .text_blue {
+      .text_blue {
         color: rgb(9, 9, 102);
-    }
+      }
 
-    .text {
+      .text {
         color: rgb(9, 9, 102);
-    }
-
-
+      }
     </style>
-</head>
-<body>
-
-    
-    
-    <div class="ad-container" data-url="https://ebl.com.bd/emical" onclick="goToLink(this)" style="cursor: pointer;">
-
-        <div class="message-box">
-            <p>আপনার স্বপ্নের</p>
-            <p class="sixty text_blue">গাড়ি</p>
-            <p>কেনার ইচ্ছা পূরণে  </p>
-            <p><span class="text_blue"> ইবিএল</span></p>
-            <p><span class="sixty text_blue">অটো লোন</span></p>
-            <!-- <p>এখন সর্বোচ্চ <br> <span class="sixty">৬০</span> লক্ষ টাকা</p> -->
-        </div>
-        
+  </head>
+  <body>
+   
+        <!-- Your ad content here -->
       
-        <div class="logo_img">
-            <img src="images/logo.jpg" alt="logo" width="100px">
+    <a class="ad-container"
+       href="https://ebl.com.bd/emical" target="_blank" class="ad-container" style="text-decoration: none;"
+    >
+      <div class="message-box">
+        <p>আপনার স্বপ্নের</p>
+        <p class="sixty text_blue">গাড়ি</p>
+        <p>কেনার ইচ্ছা পূরণে</p>
+        <p><span class="text_blue"> ইবিএল</span></p>
+        <p><span class="sixty text_blue">অটো লোন</span></p>
+        <!-- <p>এখন সর্বোচ্চ <br> <span class="sixty">৬০</span> লক্ষ টাকা</p> -->
+      </div>
+
+      <div class="logo_img">
+        <img src="images/logo.jpg" alt="logo" width="100px" />
+      </div>
+
+      <div class="car_img">
+        <img src="images/car.png" alt="car" width="100px" />
+      </div>
+
+      <div class="countdown">
+        <div class="iftar_title" id="countdown-title">ইফতারের সময় বাকি:</div>
+        <div class="countdown-item">
+          <span id="hours">০০</span>
+          <span class="countdown-label">ঘণ্টা</span>
         </div>
-
-
-        <div class="car_img">
-            <img src="images/car.png" alt="car" width="100px">
+        <div class="countdown-item">
+          <span id="minutes">০০</span>
+          <span class="countdown-label">মিনিট</span>
         </div>
-
-
-
-        <div class="countdown">
-            <div class="iftar_title" id="countdown-title">ইফতারের সময় বাকি:</div>
-            <div class="countdown-item">
-                <span id="hours">০০</span>
-                <span class="countdown-label">ঘণ্টা</span>
-            </div>
-            <div class="countdown-item">
-                <span id="minutes">০০</span>
-                <span class="countdown-label">মিনিট</span>
-            </div>
-            <div class="countdown-item">
-                <span id="seconds">০০</span>
-                <span class="countdown-label">সেকেন্ড</span>
-            </div>
+        <div class="countdown-item">
+          <span id="seconds">০০</span>
+          <span class="countdown-label">সেকেন্ড</span>
         </div>
-        
-        <!-- Google AdSense Ad -->
-        <div class="adsense-container">
-            
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <ins class="adsbygoogle"
-                 style="display:block;width:320px;height:250px"
-                 data-ad-client="your-ad-client-id"
-                 data-ad-slot="your-ad-slot-id"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
+      </div>
+    </a>
+
+      
+
+    <!-- Google AdSense Ad -->
+    <div class="adsense-container">
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
+        <ins
+          class="adsbygoogle"
+          style="display: block; width: 320px; height: 250px"
+          data-ad-client="your-ad-client-id"
+          data-ad-slot="your-ad-slot-id"
+        ></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 
+
+
     <script>
+      function goToLink(element) {
+        var url = element.getAttribute("data-url");
+        if (url) {
+          window.open(url, "_blank"); // Open in a new tab
+        }
+      }
 
+      const ramadanTimes = [
+        {
+          date: "24 February 2025",
+          sehri: "04:30 (+06)",
+          iftar: "18:30 (+06)",
+        },
+        {
+          date: "25 February 2025",
+          sehri: "04:30 (+06)",
+          iftar: "18:30 (+06)",
+        },
+        {
+          date: "26 February 2025",
+          sehri: "04:30 (+06)",
+          iftar: "18:30 (+06)",
+        },
+        {
+          date: "27 February 2025",
+          sehri: "04:30 (+06)",
+          iftar: "18:30 (+06)",
+        },
+        {
+          date: "28 February 2025",
+          sehri: "04:30 (+06)",
+          iftar: "18:30 (+06)",
+        },
+        { date: "01 March 2025", sehri: "05:05 (+06)", iftar: "18:01 (+06)" },
+        { date: "02 March 2025", sehri: "05:04 (+06)", iftar: "18:02 (+06)" },
+        { date: "03 March 2025", sehri: "05:04 (+06)", iftar: "18:02 (+06)" },
+        { date: "04 March 2025", sehri: "05:03 (+06)", iftar: "18:03 (+06)" },
+        { date: "05 March 2025", sehri: "05:02 (+06)", iftar: "18:03 (+06)" },
+        { date: "06 March 2025", sehri: "05:01 (+06)", iftar: "18:04 (+06)" },
+        { date: "07 March 2025", sehri: "05:00 (+06)", iftar: "18:04 (+06)" },
+        { date: "08 March 2025", sehri: "04:59 (+06)", iftar: "18:04 (+06)" },
+        { date: "09 March 2025", sehri: "04:58 (+06)", iftar: "18:05 (+06)" },
+        { date: "10 March 2025", sehri: "04:57 (+06)", iftar: "18:05 (+06)" },
+        { date: "11 March 2025", sehri: "04:56 (+06)", iftar: "18:06 (+06)" },
+        { date: "12 March 2025", sehri: "04:55 (+06)", iftar: "18:06 (+06)" },
+        { date: "13 March 2025", sehri: "04:54 (+06)", iftar: "18:07 (+06)" },
+        { date: "14 March 2025", sehri: "04:53 (+06)", iftar: "18:07 (+06)" },
+        { date: "15 March 2025", sehri: "04:52 (+06)", iftar: "18:07 (+06)" },
+        { date: "16 March 2025", sehri: "04:51 (+06)", iftar: "18:08 (+06)" },
+        { date: "17 March 2025", sehri: "04:50 (+06)", iftar: "18:08 (+06)" },
+        { date: "18 March 2025", sehri: "04:49 (+06)", iftar: "18:09 (+06)" },
+        { date: "19 March 2025", sehri: "04:48 (+06)", iftar: "18:09 (+06)" },
+        { date: "20 March 2025", sehri: "04:47 (+06)", iftar: "18:09 (+06)" },
+        { date: "21 March 2025", sehri: "04:46 (+06)", iftar: "18:10 (+06)" },
+        { date: "22 March 2025", sehri: "04:45 (+06)", iftar: "18:10 (+06)" },
+        { date: "23 March 2025", sehri: "04:44 (+06)", iftar: "18:11 (+06)" },
+        { date: "24 March 2025", sehri: "04:43 (+06)", iftar: "18:11 (+06)" },
+        { date: "25 March 2025", sehri: "04:42 (+06)", iftar: "18:11 (+06)" },
+        { date: "26 March 2025", sehri: "04:41 (+06)", iftar: "18:12 (+06)" },
+        { date: "27 March 2025", sehri: "04:40 (+06)", iftar: "18:12 (+06)" },
+        { date: "28 March 2025", sehri: "04:39 (+06)", iftar: "18:13 (+06)" },
+        { date: "29 March 2025", sehri: "04:38 (+06)", iftar: "18:13 (+06)" },
+      ];
 
-        
-            function goToLink(element) {
-                var url = element.getAttribute("data-url");
-                if (url) {
-                    window.open(url, "_blank"); // Open in a new tab
-                }
-            }
-
-
-const ramadanTimes = [
-        { date: "24 February 2025", sehri: "04:30 (+06)", iftar: "18:30 (+06)" },
-        { date: "25 February 2025", sehri: "04:30 (+06)", iftar: "18:30 (+06)" },
-        { date: "26 February 2025", sehri: "04:30 (+06)", iftar: "18:30 (+06)" },
-        { date: "27 February 2025", sehri: "04:30 (+06)", iftar: "18:30 (+06)" },
-        { date: "28 February 2025", sehri: "04:30 (+06)", iftar: "18:30 (+06)" },
-    { date: "01 March 2025", sehri: "05:05 (+06)", iftar: "18:01 (+06)" },
-    { date: "02 March 2025", sehri: "05:04 (+06)", iftar: "18:02 (+06)" },
-    { date: "03 March 2025", sehri: "05:04 (+06)", iftar: "18:02 (+06)" },
-    { date: "04 March 2025", sehri: "05:03 (+06)", iftar: "18:03 (+06)" },
-    { date: "05 March 2025", sehri: "05:02 (+06)", iftar: "18:03 (+06)" },
-    { date: "06 March 2025", sehri: "05:01 (+06)", iftar: "18:04 (+06)" },
-    { date: "07 March 2025", sehri: "05:00 (+06)", iftar: "18:04 (+06)" },
-    { date: "08 March 2025", sehri: "04:59 (+06)", iftar: "18:04 (+06)" },
-    { date: "09 March 2025", sehri: "04:58 (+06)", iftar: "18:05 (+06)" },
-    { date: "10 March 2025", sehri: "04:57 (+06)", iftar: "18:05 (+06)" },
-    { date: "11 March 2025", sehri: "04:56 (+06)", iftar: "18:06 (+06)" },
-    { date: "12 March 2025", sehri: "04:55 (+06)", iftar: "18:06 (+06)" },
-    { date: "13 March 2025", sehri: "04:54 (+06)", iftar: "18:07 (+06)" },
-    { date: "14 March 2025", sehri: "04:53 (+06)", iftar: "18:07 (+06)" },
-    { date: "15 March 2025", sehri: "04:52 (+06)", iftar: "18:07 (+06)" },
-    { date: "16 March 2025", sehri: "04:51 (+06)", iftar: "18:08 (+06)" },
-    { date: "17 March 2025", sehri: "04:50 (+06)", iftar: "18:08 (+06)" },
-    { date: "18 March 2025", sehri: "04:49 (+06)", iftar: "18:09 (+06)" },
-    { date: "19 March 2025", sehri: "04:48 (+06)", iftar: "18:09 (+06)" },
-    { date: "20 March 2025", sehri: "04:47 (+06)", iftar: "18:09 (+06)" },
-    { date: "21 March 2025", sehri: "04:46 (+06)", iftar: "18:10 (+06)" },
-    { date: "22 March 2025", sehri: "04:45 (+06)", iftar: "18:10 (+06)" },
-    { date: "23 March 2025", sehri: "04:44 (+06)", iftar: "18:11 (+06)" },
-    { date: "24 March 2025", sehri: "04:43 (+06)", iftar: "18:11 (+06)" },
-    { date: "25 March 2025", sehri: "04:42 (+06)", iftar: "18:11 (+06)" },
-    { date: "26 March 2025", sehri: "04:41 (+06)", iftar: "18:12 (+06)" },
-    { date: "27 March 2025", sehri: "04:40 (+06)", iftar: "18:12 (+06)" },
-    { date: "28 March 2025", sehri: "04:39 (+06)", iftar: "18:13 (+06)" },
-    { date: "29 March 2025", sehri: "04:38 (+06)", iftar: "18:13 (+06)" }
-];
-
-    function updateCountdown() {
+      function updateCountdown() {
         let now = new Date();
-        let todayDate = now.toLocaleDateString("en-GB", { day: '2-digit', month: 'long', year: 'numeric' });
+        let todayDate = now.toLocaleDateString("en-GB", {
+          day: "2-digit",
+          month: "long",
+          year: "numeric",
+        });
 
-     
         let sehriTime, iftarTime;
 
-       
-
         // Check if today exists in Ramadan schedule
-        let todaySchedule = ramadanTimes.find(item => item.date === todayDate);
-   
+        let todaySchedule = ramadanTimes.find(
+          (item) => item.date === todayDate
+        );
 
         if (todaySchedule) {
-            let sehriParts = todaySchedule.sehri.split(" ")[0].split(":");
-   
-            let iftarParts = todaySchedule.iftar.split(" ")[0].split(":");
-      
+          let sehriParts = todaySchedule.sehri.split(" ")[0].split(":");
 
-            sehriTime = new Date();
-            sehriTime.setHours(parseInt(sehriParts[0]), parseInt(sehriParts[1]), 0);
+          let iftarParts = todaySchedule.iftar.split(" ")[0].split(":");
 
-            iftarTime = new Date();
-            iftarTime.setHours(parseInt(iftarParts[0]), parseInt(iftarParts[1]), 0);
-        } 
+          sehriTime = new Date();
+          sehriTime.setHours(
+            parseInt(sehriParts[0]),
+            parseInt(sehriParts[1]),
+            0
+          );
+
+          iftarTime = new Date();
+          iftarTime.setHours(
+            parseInt(iftarParts[0]),
+            parseInt(iftarParts[1]),
+            0
+          );
+        }
 
         let targetTime, titleText;
 
         if (now < sehriTime) {
-            targetTime = sehriTime;
-            titleText = "সেহেরীর সময় বাকি:";
+          targetTime = sehriTime;
+          titleText = "সেহেরীর সময় বাকি:";
         } else if (now < iftarTime) {
-            targetTime = iftarTime;
-            titleText = "ইফতারের সময় বাকি:";
+          targetTime = iftarTime;
+          titleText = "ইফতারের সময় বাকি:";
         } else {
-            // After Iftar, set next day's Sehri countdown dynamically
-            let todayIndex = ramadanTimes.findIndex(item => item.date === todayDate);
-            
-            if (todayIndex !== -1 && todayIndex + 1 < ramadanTimes.length) {
-                let nextDaySehriParts = ramadanTimes[todayIndex + 1].sehri.split(" ")[0].split(":");
-                targetTime = new Date();
-                targetTime.setDate(now.getDate() + 1);
-                targetTime.setHours(parseInt(nextDaySehriParts[0]), parseInt(nextDaySehriParts[1]), 0);
-            } else {
-                // Default fallback Sehri time if next day's data is missing
-                targetTime = new Date();
-                targetTime.setDate(now.getDate() + 1);
-                targetTime.setHours(4, 30, 0);
-            }
+          // After Iftar, set next day's Sehri countdown dynamically
+          let todayIndex = ramadanTimes.findIndex(
+            (item) => item.date === todayDate
+          );
 
-            titleText = "সেহেরীর সময় বাকি:";
+          if (todayIndex !== -1 && todayIndex + 1 < ramadanTimes.length) {
+            let nextDaySehriParts = ramadanTimes[todayIndex + 1].sehri
+              .split(" ")[0]
+              .split(":");
+            targetTime = new Date();
+            targetTime.setDate(now.getDate() + 1);
+            targetTime.setHours(
+              parseInt(nextDaySehriParts[0]),
+              parseInt(nextDaySehriParts[1]),
+              0
+            );
+          } else {
+            // Default fallback Sehri time if next day's data is missing
+            targetTime = new Date();
+            targetTime.setDate(now.getDate() + 1);
+            targetTime.setHours(4, 30, 0);
+          }
+
+          titleText = "সেহেরীর সময় বাকি:";
         }
 
         let timeDiff = targetTime - now;
@@ -347,13 +396,21 @@ const ramadanTimes = [
         let seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
         document.getElementById("countdown-title").textContent = titleText;
-        document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
-        document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
-        document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
-    }
+        document.getElementById("hours").textContent = hours
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("minutes").textContent = minutes
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("seconds").textContent = seconds
+          .toString()
+          .padStart(2, "0");
+      }
 
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
     </script>
-</body>
+
+    
+  </body>
 </html>
